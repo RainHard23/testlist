@@ -1,0 +1,80 @@
+@import '../../../styles/sass/variables';
+
+
+.navBlock {
+  filter: drop-shadow(0px 1px 3px rgba(0,0,0,0.16));
+  padding-bottom: 23px;
+  margin-bottom: 45px;
+  padding-top: 20px;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.16);
+  .navContainer {
+    display: flex;
+    align-items: center;
+
+
+    .navButtonCategory {
+      display: flex;
+      align-items: center;
+      border: 1px solid $mainText;
+      background-color: #fff;
+      color: $mainText;
+      font-family: $mainFontFamily;
+      padding: 10px 45px 10px 35px;
+      margin-right: 21px;
+      .navButtonIcon {
+        padding-right: 10px;
+      }
+    }
+    .navPhoneNumber {
+      display: flex;
+      align-items: center;
+      margin-left: 93px;
+      margin-right: 47px;
+
+      & img {
+        margin-right: 22px;
+      }
+      & a {
+        font-family: $secondFontFamily;
+        font-size: $mainFontSize;
+        font-weight: 400;
+        color: #38b951;
+        text-decoration: none;
+      }
+    }
+    .navService {
+      margin-right: 49px;
+
+      & a {
+        font-family: $secondFontFamily;
+        font-size: $mainFontSize;
+        font-weight: 500;
+        color: #0093d8;
+        text-decoration: none;
+      }
+    }
+    .navServiceIcon {
+      margin-right: 77px;
+    }
+    .navBasketIcon {
+      margin-right: 28px;
+    }
+    .navAccount {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & img {
+        margin-right: 10px;
+      }
+      & a {
+        font-family: $mainFontFamily;
+        font-size: 14px;
+        font-weight: 700;
+        color: $mainText;
+        text-decoration: none;
+      }
+    }
+  }
+}

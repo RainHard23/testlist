@@ -1,0 +1,49 @@
+@import '../../../styles/sass/variables';
+
+.cardsBlock {
+
+  .cardsButtons {
+    margin-top: 23px;
+    display: flex;
+    align-items: center;
+
+    & span {
+      margin-right: 22px;
+      font-family: $mainFontFamily;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 22px;
+      color: #a7a9ac;
+    }
+    .counterPhones {
+      margin-left: auto;
+    }
+
+    .cardsButton {
+      all: unset;
+      cursor: pointer;
+      margin-right: 21px;
+
+      font-family: $mainFontFamily;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 22px;
+      color: $mainText;
+      transition: .1s linear;
+      &:hover {
+
+        color: #0093d8;
+      }
+    }
+  }
+}
+.containerCards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cardItem {
+  margin: 20px;
+  border: 1px solid  #a7a9ac;
+}

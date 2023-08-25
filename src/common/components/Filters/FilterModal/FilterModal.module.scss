@@ -1,0 +1,74 @@
+@import '../../../../styles/sass/variables';
+
+.filterModal {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid rgba(167, 169, 172, 0.5);
+  padding: 10px;
+  width: 339px;
+  margin-right: 9px;
+  margin-bottom: 10px;
+  position: relative;
+  background-color: #fff;
+
+  &.open .filterOptions {
+    display: block;
+    animation: slideDown 0.2s ease-in-out;
+  }
+
+  .filterName {
+    font-family: $secondFontFamily;
+    font-size: $mainFontSize;
+    font-weight: 500;
+    color: $mainText;
+    flex-grow: 1;
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+
+  .filterIcon {
+    font-family: $secondFontFamily;
+    font-size: $mainFontSize;
+    font-weight: 500;
+    color: $mainText;
+    margin-right: 10px;
+  }
+
+  .filterOptions {
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 2;
+    max-width: 339px;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    transform-origin: top center;
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.filterOptions label {
+  display: block; /* Элементы label будут отображаться один под другим */
+  margin-bottom: 5px; /* Добавим небольшой отступ между элементами */
+}

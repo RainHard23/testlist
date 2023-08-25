@@ -1,0 +1,54 @@
+@import '../../../styles/sass/variables';
+
+  .filtersBlock {
+
+    .filtersTitle {
+
+      & span {
+        font-family: $secondFontFamily;
+        font-size: 18px;
+        font-weight: 400;
+        color: $mainText;
+      }
+      & h1 {
+        font-family: $mainFontFamily;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 47px;
+        color: $primaryColor;
+      }
+    }
+    .filtersContainer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-left: auto;
+      padding-bottom: 20px;
+    }
+    .filtersButtonReset {
+      max-width: 210px;
+      width: 100%;
+      background-color: #808285;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 9px;
+      padding-bottom: 9px;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 28px;
+      font-family: $mainFontFamily;
+      margin-left: auto;
+      cursor: pointer;
+      margin-right: 10px;
+      & img {
+        margin-right: 5px;
+      }
+    }
+  }
+
+
+
+

@@ -1,0 +1,74 @@
+@import '../../../../styles/sass/variables';
+
+.cardItem {
+
+  max-width: 418px;
+  width: 100%;
+  margin: 10px;
+  border: 1px solid rgba(167, 169, 172, 0.5);
+
+  &:nth-child(4n+1) {
+    margin-left: 0;
+  }
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  .cardPhoto {
+    display: flex;
+    justify-content: center;
+
+    & img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .cardInfo {
+    margin: 23px 31px 30px 20px;
+
+    & h3 {
+      font-family: $mainFontFamily;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: $primaryColor;
+    }
+    .cardColor {
+      font-family: $mainFontFamily;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 21px;
+      color: $primaryColor;
+    }
+    .cardCharacteristics {
+      font-family: $mainFontFamily;
+      font-size: $mainFontSize;
+      font-weight: bold;
+      color: $primaryColor;
+    }
+  }
+
+  .priceAndIcon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 50px;
+
+    .cardPrice {
+      font-family: $mainFontFamily;
+      font-size: 25px;
+      font-weight: bold;
+      color: $primaryColor;
+    }
+
+    .iconBlock {
+      align-items: center;
+
+      .cardIcon:not(:last-child) {
+        margin-right: 7px;
+      }
+    }
+  }
+}

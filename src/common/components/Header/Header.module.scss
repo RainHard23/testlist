@@ -1,0 +1,15 @@
+@import '../../../styles/sass/variables';
+
+.headerBlock {
+  background-color:  #d60000;
+
+  .headerDiscount {
+    display: block;
+    text-align: center;
+    padding: 12px 0;
+    font-family: $secondFontFamily;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+  }
+}

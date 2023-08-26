@@ -4,7 +4,7 @@ import s from './FilterModal.module.scss';
 interface FilterModalProps {
     filterName: string;
     options: string[];
-    onOptionSelect: (selectedPrice: number[]) => void;
+    onOptionSelect: (selectedOptions: string[]) => void;
 }
 
 export const FilterModal: React.FC<FilterModalProps> = ({ filterName, options, onOptionSelect }) => {
@@ -21,7 +21,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({ filterName, options, o
             : [...selectedOptions, option];
 
         setSelectedOptions(updatedSelectedOptions);
-        const selectedPrices = updatedSelectedOptions.map(Number);
+        const selectedPrices = updatedSelectedOptions.map(String);
         onOptionSelect(selectedPrices);
     };
 
@@ -30,7 +30,7 @@ export const FilterModal: React.FC<FilterModalProps> = ({ filterName, options, o
             <div className={s.filterName} onClick={toggleModal}>
                 {filterName}
             </div>
-            <div className={s.filterIcon} onClick={toggleModal}>+</div>
+            <div className={s.filterIcon} onClick={toggleModal}>+</div> {/* Переместили значок "+" сюда */}
             {isOpen && (
                 <div className={s.filterOptions}>
                     {options.map(option => (

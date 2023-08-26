@@ -3,6 +3,7 @@ import { useAppSelector } from 'app/store';
 import s from 'common/components/Cards/Cards.module.scss';
 import sContainer from '../../../styles/container.module.scss';
 import { Card } from 'common/components/Cards/Card/Card';
+import {Pagination} from "common/components/Pagination/Pagination";
 
 export const Cards = () => {
     const products = useAppSelector(state => state.cards.products);
@@ -49,6 +50,16 @@ export const Cards = () => {
                             />
                         ))
                     )}
+                </div>
+
+                <div className={s.paginationContainer}>
+                    <Pagination />
+                    <div>
+                        <button className={s.paginationButton}>Load More</button>
+                    </div>
+                    <div>
+                        <span className={s.paginationCounter}>Afișare 1-12 (din 25)</span>
+                    </div>
                 </div>
             </div>
         </div>

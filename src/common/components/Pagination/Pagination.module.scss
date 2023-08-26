@@ -1,0 +1,32 @@
+.paginationContainer {
+  display: flex;
+  max-width: 263px;
+  align-items: center;
+  width: 100%;
+
+  .paginationButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 38px;
+    width: 100%;
+    border: none;
+    padding: 6px 14px;
+    margin-right: 10px;
+    background-color: #ebebeb;
+    color: #58595b;
+    font-size: 20px;
+    font-weight: 500;
+
+    font-family: 'Montserrat Variable', sans-serif;
+    transition: 0.2s linear;
+
+    &:hover {
+      background-color: #0093d8;
+    }
+  }
+  .paginationIcon {
+    margin-right: 10px;
+  }
+}

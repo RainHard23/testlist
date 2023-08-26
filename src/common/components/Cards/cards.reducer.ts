@@ -1,13 +1,14 @@
-import iphone from '../../../assets/image/cards/iphone.jpeg'
+import iphone from '../../../assets/image/cards/iphone.png'
 
 export type ProductType = {
     id: number;
     image: string;
     name: string;
+    brand: string;
     color: string;
     characteristics: string[];
-    price: number;
-    memory: number
+    price: string;
+    memory: string
 };
 
 export type CardsStateType = {
@@ -18,6 +19,9 @@ export type CardsStateType = {
 type ActionsType =
     | ReturnType<typeof searchProducts>
     | ReturnType<typeof filterByPrice>
+    | ReturnType<typeof filterByBrand>
+    | ReturnType<typeof filterByMemory>
+    | ReturnType<typeof resetFilters>
 
 
 
@@ -28,63 +32,70 @@ const initialState: CardsStateType = {
             image: iphone,
             name: "Apple iPhone 11 Plus 256 Gb",
             color: "Blue",
+            brand: "Iphone",
             characteristics: ["6.1” | 12 MP | 6 GB | Single SIM"],
-            price: 600,
-            memory: 256
+            price: '400',
+            memory: '256'
         },
         {
             id: 2,
             image: iphone,
-            name: "Samsung",
+            name: "Nokia 256 GB",
             color: "Blue",
             characteristics: ["6.1” | 12 MP | 6 GB | Single SIM"],
-            price: 600,
-            memory: 256
+            brand: "Nokia",
+            price: '400',
+            memory: '256'
         },
         {
             id: 3,
             image: iphone,
-            name: "Nokia iPhone 11 Plus 256 Gb",
+            name: "Xiaomi 256 GB",
             color: "Blue",
             characteristics: ["6.1” | 12 MP | 6 GB | Single SIM"],
-            price: 400,
-            memory: 256
+            brand: "Xiaomi",
+            price: '500',
+            memory: '256'
         },
         {
             id: 4,
             image: iphone,
-            name: "Apple iPhone 11 Plus 256 Gb",
+            name: "Xiaomi 64 GB",
             color: "Blue",
             characteristics: ["6.1” | 12 MP | 6 GB | Single SIM"],
-            price: 300,
-            memory: 256
+            brand: "Xiaomi",
+            price: '300',
+            memory: '64'
         },
         {
             id: 5,
             image: iphone,
-            name: "Apple iPhone 11 Plus 256 Gb",
+            name: "Nokia 256 GB",
             color: "Blue",
             characteristics: ["6.1” | 12 MP | 6 GB | Single SIM"],
-            price: 400,
-            memory: 256
+            brand: "Nokia",
+            price: '400',
+            memory: '256'
         },
         {
             id: 6,
             image: iphone,
-            name: "Apple iPhone 11 Plus 256 Gb",
+            name: "Samsung 64 GB",
             color: "Blue",
             characteristics: ["6.1” | 12 MP | 6 GB | Single SIM"],
-            price: 600,
-            memory: 256
+            brand: "Samsung",
+            price: '300',
+            memory: '64'
         },
         {
             id: 7,
             image: iphone,
-            name: "Apple iPhone 11 Plus 256 Gb",
+            name: "Apple iPhone 11 Plus 32 Gb",
             color: "Blue",
             characteristics: ["6.1” | 12 MP | 6 GB | Single SIM"],
-            price: 600,
-            memory: 256
+            brand: "Iphone",
+            price: '300',
+            memory: '32'
         },
         {
             id: 8,
@@ -92,8 +103,9 @@ const initialState: CardsStateType = {
             name: "Apple iPhone 11 Plus 256 Gb",
             color: "Blue",
             characteristics: ["6.1” | 12 MP | 6 GB | Single SIM"],
-            price: 600,
-            memory: 256
+            brand: "Iphone",
+            price: '600',
+            memory: '512'
         },
     ],
     filteredProducts: []
@@ -110,7 +122,23 @@ export const cardsReducer = (state = initialState, action: ActionsType) => {
             return {
                 ...state,
                 filteredProducts: state.products.filter(product => action.price.includes(product.price)), // Используйте метод includes
+            }
+        case 'FILTER_BY_BRAND':
+            return {
+                ...state,
+                filteredProducts: state.products.filter(product => action.brands.includes(product.brand)),
             };
+        case 'FILTER_BY_MEMORY':
+            return {
+                ...state,
+                filteredProducts: state.products.filter(product => action.memory.includes(product.memory)),
+            };
+        case 'RESET_FILTERS':
+            return {
+                ...state,
+                filteredProducts: []
+            };
+
         default:
             return state;
     }
@@ -123,13 +151,33 @@ export const searchProducts = (filteredProducts: ProductType[]) => {
     } as const;
 };
 
-export const filterByPrice = (price: number[]) => {
+export const filterByPrice = (price: string[]) => {
     return {
         type: 'FILTER_BY_PRICE',
         price,
     } as const;
 };
 
+
+export const filterByBrand = (brands: string[]) => {
+    return {
+        type: 'FILTER_BY_BRAND',
+        brands,
+    } as const;
+};
+
+export const filterByMemory = (memory: string[]) => {
+    return {
+        type: 'FILTER_BY_MEMORY',
+        memory,
+    } as const;
+};
+
+export const resetFilters = () => {
+    return {
+        type: 'RESET_FILTERS',
+    } as const;
+};
 
 
 

@@ -2,9 +2,9 @@
 
 import React from 'react';
 import s from './Card.module.scss'; // Импорт стилей из SCSS
-import heart from '../../../../assets/image/cards/card/heart.jpeg';
-import libra from '../../../../assets/image/cards/card/libra.jpeg';
-import basket from '../../../../assets/image/cards/card/basket.jpeg';
+import heart from '../../../../assets/image/cards/card/heart.png';
+import libra from '../../../../assets/image/cards/card/libra.png';
+import basket from '../../../../assets/image/cards/card/basket.png';
 
 type CardProps = {
     id: number;
@@ -12,7 +12,7 @@ type CardProps = {
     name: string;
     color: string;
     characteristics: string[];
-    price: number;
+    price: string;
 };
 
 export const Card = (props: CardProps) => {

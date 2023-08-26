@@ -13,7 +13,7 @@ export type ProductType = {
 
 export type CardsStateType = {
     products: ProductType[];
-    filteredProducts: ProductType[]; // Отфильтрованные карточки
+    filteredProducts: ProductType[];
 };
 
 type ActionsType =
@@ -121,7 +121,7 @@ export const cardsReducer = (state = initialState, action: ActionsType) => {
         case 'FILTER_BY_PRICE':
             return {
                 ...state,
-                filteredProducts: state.products.filter(product => action.price.includes(product.price)), // Используйте метод includes
+                filteredProducts: state.products.filter(product => action.price.includes(product.price)),
             }
         case 'FILTER_BY_BRAND':
             return {

@@ -3,9 +3,13 @@
 .searchContainer {
   position: relative;
   width: 636px;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
+
   .searchInput {
     padding-left: 48px;
-
     width: 100%;
     font-family: $mainFontFamily;
     font-size: $mainFontSize;
@@ -15,24 +19,24 @@
     border: none;
     outline: none;
 
-
     &::placeholder {
       color: #fff;
-
     }
+
     &:focus {
       border: none;
     }
   }
+
   .searchIcon {
     padding-left: 16px;
     position: absolute;
     top: 50%;
     bottom: 50%;
     transform: translateY(-50%);
-
   }
 }
+
 .searchInputError {
   margin-top: -13px;
   position: absolute;
@@ -40,4 +44,10 @@
   font-family: $mainFontFamily;
   font-size: $mainFontSize;
   color: #eb6f6f;
+}
+
+@media (max-width: 990px) {
+  .searchContainer {
+    width: 100%;
+  }
 }

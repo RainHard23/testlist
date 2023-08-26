@@ -1,54 +1,74 @@
 @import '../../../styles/sass/variables';
 
-  .filtersBlock {
+.filtersBlock {
 
-    .filtersTitle {
+  .filtersTitle {
+    display: flex;
+    flex-direction: column;
 
-      & span {
-        font-family: $secondFontFamily;
-        font-size: 18px;
-        font-weight: 400;
-        color: $mainText;
-      }
-      & h1 {
-        font-family: $mainFontFamily;
-        font-size: 30px;
-        font-weight: 500;
-        line-height: 47px;
-        color: $primaryColor;
-      }
-    }
-    .filtersContainer {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-left: auto;
-      padding-bottom: 20px;
-    }
-    .filtersButtonReset {
-      max-width: 210px;
-      width: 100%;
-      background-color: #808285;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 9px;
-      padding-bottom: 9px;
-      border: none;
-      color: #fff;
+    & span {
+      font-family: $secondFontFamily;
       font-size: 18px;
-      font-weight: 500;
-      line-height: 28px;
+      font-weight: 400;
+      color: $mainText;
+    }
+    & h1 {
       font-family: $mainFontFamily;
-      margin-left: auto;
-      cursor: pointer;
-      margin-right: 10px;
-      & img {
-        margin-right: 5px;
-      }
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 47px;
+      color: $primaryColor;
+      margin-top: 10px;
     }
   }
 
+  .filtersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
 
+  .filtersButtonReset {
+    max-width: 210px;
+    width: 100%;
+    background-color: #808285;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    font-family: $mainFontFamily;
+    cursor: pointer;
+    margin-left: auto;
+    transition: background-color 0.2s linear;
 
+    & img {
+      margin-right: 5px;
+    }
 
+    &:hover {
+      background-color: #6a6c6d;
+    }
+
+    @media (max-width: 750px) {
+      margin-top: 10px;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .filtersTitle {
+      margin-bottom: 10px;
+    }
+  }
+}

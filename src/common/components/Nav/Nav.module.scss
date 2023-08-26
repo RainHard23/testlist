@@ -1,17 +1,14 @@
 @import '../../../styles/sass/variables';
 
-
 .navBlock {
-  filter: drop-shadow(0px 1px 3px rgba(0,0,0,0.16));
-  padding-bottom: 23px;
-  margin-bottom: 45px;
-  padding-top: 20px;
+  filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.16));
+  padding: 10px 15px;
+  margin-bottom: 30px;
 
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.16);
   .navContainer {
     display: flex;
     align-items: center;
-
+    justify-content: space-between;
 
     .navButtonCategory {
       display: flex;
@@ -20,20 +17,17 @@
       background-color: #fff;
       color: $mainText;
       font-family: $mainFontFamily;
-      padding: 10px 45px 10px 35px;
-      margin-right: 21px;
+      padding: 8px 20px;
       .navButtonIcon {
-        padding-right: 10px;
+        padding-right: 8px;
       }
     }
     .navPhoneNumber {
       display: flex;
       align-items: center;
-      margin-left: 93px;
-      margin-right: 47px;
 
       & img {
-        margin-right: 22px;
+        margin-right: 10px;
       }
       & a {
         font-family: $secondFontFamily;
@@ -44,8 +38,6 @@
       }
     }
     .navService {
-      margin-right: 49px;
-
       & a {
         font-family: $secondFontFamily;
         font-size: $mainFontSize;
@@ -55,25 +47,89 @@
       }
     }
     .navServiceIcon {
-      margin-right: 77px;
+      margin-right: 20px;
     }
     .navBasketIcon {
-      margin-right: 28px;
+      margin-right: 10px;
     }
     .navAccount {
       display: flex;
       align-items: center;
-      justify-content: center;
 
       & img {
-        margin-right: 10px;
+        margin-right: 6px;
       }
       & a {
         font-family: $mainFontFamily;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 700;
         color: $mainText;
         text-decoration: none;
+      }
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .navContainer {
+      justify-content: center;
+    }
+    .navServiceIcon {
+      margin-right: 10px;
+    }
+  }
+
+  @media (max-width: 750px) {
+    .navContainer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .navPhoneNumber,
+    .navService,
+    .navServiceIcon,
+    .navBasketIcon,
+    .navAccount {
+      margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .navContainer {
+      .navButtonCategory,
+      .navPhoneNumber,
+      .navService,
+      .navServiceIcon,
+      .navBasketIcon,
+      .navAccount {
+        margin-right: 0;
+        margin-top: 10px;
+      }
+      .navButtonCategory {
+        padding: 8px 10px;
+        .navButtonIcon {
+          padding-right: 5px;
+        }
+      }
+      .navPhoneNumber {
+        flex-direction: column;
+        align-items: flex-start;
+        & img {
+          margin-right: 0;
+          margin-bottom: 5px;
+        }
+        & a {
+          font-size: 14px;
+        }
+      }
+      .navServiceIcon {
+        margin-right: 0;
+      }
+      .navAccount {
+        & img {
+          margin-right: 4px;
+        }
+        & a {
+          font-size: 10px;
+        }
       }
     }
   }

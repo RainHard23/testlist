@@ -17,6 +17,8 @@ export type CardsStateType = {
 
 type ActionsType =
     | ReturnType<typeof searchProducts>
+    | ReturnType<typeof filterByPrice>
+
 
 
 const initialState: CardsStateType = {
@@ -33,7 +35,7 @@ const initialState: CardsStateType = {
         {
             id: 2,
             image: iphone,
-            name: "Samsung iPhone 11 Plus 256 Gb",
+            name: "Samsung",
             color: "Blue",
             characteristics: ["6.1” | 12 MP | 6 GB | Single SIM"],
             price: 600,
@@ -45,7 +47,7 @@ const initialState: CardsStateType = {
             name: "Nokia iPhone 11 Plus 256 Gb",
             color: "Blue",
             characteristics: ["6.1” | 12 MP | 6 GB | Single SIM"],
-            price: 600,
+            price: 400,
             memory: 256
         },
         {
@@ -54,7 +56,7 @@ const initialState: CardsStateType = {
             name: "Apple iPhone 11 Plus 256 Gb",
             color: "Blue",
             characteristics: ["6.1” | 12 MP | 6 GB | Single SIM"],
-            price: 600,
+            price: 300,
             memory: 256
         },
         {
@@ -63,7 +65,7 @@ const initialState: CardsStateType = {
             name: "Apple iPhone 11 Plus 256 Gb",
             color: "Blue",
             characteristics: ["6.1” | 12 MP | 6 GB | Single SIM"],
-            price: 600,
+            price: 400,
             memory: 256
         },
         {
@@ -104,6 +106,11 @@ export const cardsReducer = (state = initialState, action: ActionsType) => {
                 ...state,
                 filteredProducts: action.payload,
             };
+        case 'FILTER_BY_PRICE':
+            return {
+                ...state,
+                filteredProducts: state.products.filter(product => action.price.includes(product.price)), // Используйте метод includes
+            };
         default:
             return state;
     }
@@ -113,6 +120,13 @@ export const searchProducts = (filteredProducts: ProductType[]) => {
     return {
         type: 'SEARCH_PRODUCTS',
         payload: filteredProducts,
+    } as const;
+};
+
+export const filterByPrice = (price: number[]) => {
+    return {
+        type: 'FILTER_BY_PRICE',
+        price,
     } as const;
 };
 

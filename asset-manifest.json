@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/testlist/static/css/main.c1c2f4b3.css",
+    "main.css": "/testlist/static/css/main.fca7014e.css",
     "main.js": "/testlist/static/js/main.d64dc170.js",
     "static/js/787.898a1876.chunk.js": "/testlist/static/js/787.898a1876.chunk.js",
     "static/media/montserrat-latin-wght-normal.woff2": "/testlist/static/media/montserrat-latin-wght-normal.b66f2d18f66f15c3ac56.woff2",
@@ -59,12 +59,12 @@
     "static/media/searchIcon.svg": "/testlist/static/media/searchIcon.bbe9a8b2fee630a63f9383b36b5a563e.svg",
     "static/media/facebook.svg": "/testlist/static/media/facebook.a4667f3bad459123e248b199fc0c3b43.svg",
     "static/media/arrowRight.svg": "/testlist/static/media/arrowRight.51bf723ca3f11d8480edee94c0d9569b.svg",
-    "main.c1c2f4b3.css.map": "/testlist/static/css/main.c1c2f4b3.css.map",
+    "main.fca7014e.css.map": "/testlist/static/css/main.fca7014e.css.map",
     "main.d64dc170.js.map": "/testlist/static/js/main.d64dc170.js.map",
     "787.898a1876.chunk.js.map": "/testlist/static/js/787.898a1876.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c1c2f4b3.css",
+    "static/css/main.fca7014e.css",
     "static/js/main.d64dc170.js"
   ]
 }
